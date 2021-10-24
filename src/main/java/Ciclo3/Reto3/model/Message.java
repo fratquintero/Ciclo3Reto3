@@ -1,4 +1,4 @@
-package Ciclo3.Reto3;
+package Ciclo3.Reto3.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -16,7 +16,7 @@ public class Message implements Serializable {
     @ManyToOne
     @JoinColumn(name="id")
     @JsonIgnoreProperties({"messages", "client", "reservations"})
-    private Doctor doctor;
+    private Ciclo3.Reto3.model.Doctor doctor;
 
     @ManyToOne
     @JoinColumn(name="clientId")

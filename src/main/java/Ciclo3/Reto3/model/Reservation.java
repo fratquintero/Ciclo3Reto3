@@ -1,4 +1,4 @@
-package Ciclo3.Reto3;
+package Ciclo3.Reto3.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

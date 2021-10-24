@@ -1,5 +1,7 @@
-package Ciclo3.Reto3;
+package Ciclo3.Reto3.repository;
 
+import Ciclo3.Reto3.interfaces.InterfaceReservation;
+import Ciclo3.Reto3.model.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

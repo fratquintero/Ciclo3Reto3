@@ -1,5 +1,8 @@
-package Ciclo3.Reto3;
+package Ciclo3.Reto3.web;
 
+
+import Ciclo3.Reto3.model.Client;
+import Ciclo3.Reto3.services.ServicesClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -7,37 +10,37 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-
 @RestController
-@RequestMapping("/api/Doctor")
+@RequestMapping("/api/Client")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class ControllerDoctor {
+public class ControllerClient {
     @Autowired
-    private ServicesDoctor service;
+    private ServicesClient service;
+
     @GetMapping("/all")
-    public List<Doctor> getDoctors(){
+    public List<Client> getClients(){
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Doctor> getDoctor(@PathVariable("id") int doctorId) {
-        return service.getDoctor(doctorId);
+    public Optional<Client> getClient(@PathVariable("id") int clientId) {
+        return service.getClient(clientId);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Doctor save(@RequestBody Doctor doctor) {
-        return service.save(doctor);
+    public Client save(@RequestBody Client client) {
+        return service.save(client);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Doctor update(@RequestBody Doctor doctor) {
-        return service.update(doctor);
+    public Client update(@RequestBody Client client) {
+        return service.update(client);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id") int doctorId) {
-        return service.deleteDoctor(doctorId);
+    public boolean delete(@PathVariable("id") int clientId) {
+        return service.deleteClient(clientId);
     }
 }

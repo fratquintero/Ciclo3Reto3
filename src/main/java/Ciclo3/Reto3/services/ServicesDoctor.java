@@ -1,5 +1,7 @@
-package Ciclo3.Reto3;
+package Ciclo3.Reto3.services;
 
+import Ciclo3.Reto3.model.Doctor;
+import Ciclo3.Reto3.repository.RepositoryDoctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

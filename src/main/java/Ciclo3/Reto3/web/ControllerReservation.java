@@ -1,5 +1,7 @@
-package Ciclo3.Reto3;
+package Ciclo3.Reto3.web;
 
+import Ciclo3.Reto3.model.Reservation;
+import Ciclo3.Reto3.services.ServicesReservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

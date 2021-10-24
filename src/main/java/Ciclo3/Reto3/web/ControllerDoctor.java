@@ -1,5 +1,8 @@
-package Ciclo3.Reto3;
+package Ciclo3.Reto3.web;
 
+
+import Ciclo3.Reto3.model.Doctor;
+import Ciclo3.Reto3.services.ServicesDoctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -7,37 +10,37 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/api/Client")
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class ControllerClient {
-    @Autowired
-    private ServicesClient service;
 
+@RestController
+@RequestMapping("/api/Doctor")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
+public class ControllerDoctor {
+    @Autowired
+    private ServicesDoctor service;
     @GetMapping("/all")
-    public List<Client> getClients(){
+    public List<Doctor> getDoctors(){
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Client> getClient(@PathVariable("id") int clientId) {
-        return service.getClient(clientId);
+    public Optional<Doctor> getDoctor(@PathVariable("id") int doctorId) {
+        return service.getDoctor(doctorId);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Client save(@RequestBody Client client) {
-        return service.save(client);
+    public Doctor save(@RequestBody Doctor doctor) {
+        return service.save(doctor);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Client update(@RequestBody Client client) {
-        return service.update(client);
+    public Doctor update(@RequestBody Doctor doctor) {
+        return service.update(doctor);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public boolean delete(@PathVariable("id") int clientId) {
-        return service.deleteClient(clientId);
+    public boolean delete(@PathVariable("id") int doctorId) {
+        return service.deleteDoctor(doctorId);
     }
 }

@@ -1,5 +1,7 @@
-package Ciclo3.Reto3;
+package Ciclo3.Reto3.web;
 
+import Ciclo3.Reto3.model.Message;
+import Ciclo3.Reto3.services.ServicesMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -41,3 +43,4 @@ public class ControllerMessage {
         return service.deleteMessage(messageId);
     }
 }
+

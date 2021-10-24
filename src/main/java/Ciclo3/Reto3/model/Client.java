@@ -1,4 +1,4 @@
-package Ciclo3.Reto3;
+package Ciclo3.Reto3.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -18,7 +18,7 @@ public class Client implements Serializable {
     private Integer age;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
-    @JsonIgnoreProperties("client")
+    @JsonIgnoreProperties({"client", "messages"}) /* messages added; it was only client */
     public List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
