@@ -1,0 +1,29 @@
+1. Clonar carpeta github con código fuente: git clone https://...
+2. cd a la carpeta con archivos mvnc... y src
+3. Generar runtime (.jar) de la aplicación para ejecutarla
+	3.1 mvn clean package -DskipTests
+	3.2 cd target
+	3.3 Habilitar puerto 8080
+		3.3.1 sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
+		3.3.2 sudo firewall-cmd --reload
+	3.4 java -jar [nombre del archivo .jar]
+	
+Public IP address:
+129.159.35.23 Copy
+Username:
+opc	
+	
+instalacion de apache:
+sudo yum install -y httpd  
+sudo systemctl enable httpd
+sudo systemctl restart httpd
+sudo firewall-cmd --add-service=http --permanent
+sudo firewall-cmd --reload
+
+git bash:
+sudo yum install git
+cd /var/www/html
+
+Permisos carpeta www:
+
+sudo chmod 777 html
